@@ -8,31 +8,41 @@ library(marinecs100b)
 
 # Guiding questions -------------------------------------------------------
 
-# What does KEFJ stand for?
+# What does KEFJ stand for? Kenai Fjords National Park
 
-# How was temperature monitored?
+# How was temperature monitored? HOBO V2 temperature loggers at the rocky sites.
+# Recorded temp every 20, 30, or 60 minutes
+# Logger wet when tide level at at nearest tide station was ≥1.5m or dry when ≤0
+# Transition periods ommited
+# Averaged: Jan-March, April-May, June-July, August-October, November-December
 
 # What's the difference between absolute temperature and temperature anomaly?
-
+# Anomaly: difference from the long term mean
+# Absolute: the temp at a given time
 
 # Begin exploring ---------------------------------------------------------
 
-# How many kefj_* vectors are there?
+# How many kefj_* vectors are there? 6
 
-# How long are they?
+# How long are they? 2187966
 
-# What do they represent?
+# What do they represent? Measurements + meta data for 2 million sampling events
+# Temperature, site, date and time, tide level in meters, kind of temp reading
+# (air, transition, or water), and the season bin
 
 # Link to sketch
 
-???_datetime <- kefj_datetime[kefj_site == ???]
-???_interval <- ???_datetime[-1] - ???_datetime[-???]
-t???e(???)
+harris_datetime <- kefj_datetime[kefj_site == 'Harris']
+harris_interval <- harris_datetime[-1] - harris_datetime[-2]
+table(harris_interval)
 
+
+harris_datetime[2] - harris_datetime[1]
 
 # Problem decomposition ---------------------------------------------------
 
 # When and where did the hottest and coldest air temperature readings happen?
+kefj_datetime[which.min(kefj_temperature)]
 
 # Link to sketch
 
