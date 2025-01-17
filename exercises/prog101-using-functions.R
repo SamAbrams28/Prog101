@@ -18,7 +18,8 @@ startsWith()
 # My guess: no idea
 
 ?read.csv
-read.csv("sample csv")
+density.data <- read.csv("sample.csv", header = F)
+
 
 ?boxplot
 
